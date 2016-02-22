@@ -1,9 +1,75 @@
-img {
-	max-width: 300px;
-	max-height: 250px;
+img{
+	width: 400px;
+	height: 330px;
 	margin: 30px;
 }
+ul {
+	list-style-type: none;
 
-body {
-	margin: 100px;
+
+}
+.thumbnails li {
+	float: left;
+}
+
+.thumbnails img {
+  opacity: .75;
+}
+
+.thumbnails img:hover {
+  opacity: 1;
+}
+
+
+.active-photo {
+	position: fixed;
+	width: 60vw;
+	height: 70vh;
+	top: 10vh;
+	left: 17vw;
+	z-index: 100;
+}
+
+
+.overlay {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.8);
+	margin: 0;
+
+}
+
+#left {
+
+	width: 3vw;
+	height: 5vh;
+	position: fixed;
+	left: 0;
+	top: 50vh;
+	margin: 0;
+}
+
+#right {
+
+	width: 3vw;
+	height: 5vh;
+	position: fixed;
+	right: 0;
+	top: 50vh;
+	margin: 0;
+}
+
+#exit {
+	z-index: 1000;
+	width: 5vw;
+	height: 5vh;
+	position: fixed;
+	right: 0vw;
+	top: 0vh;
+	margin:0;
+
 }

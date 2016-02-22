@@ -1,23 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
+<meta charset="UTF-8">
+
 <title>Task</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="task.css">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="task.css">
+
+
 </head>
-<body onload="loadDoc()">
-  <div class="container">
+<body onload="App.loadDoc()">
 
 
-      <div class="row" id="photos">
-        
+<div class="container">
+
+    <ul class="thumbnails" id="photos">
+
+    </ul>
+
 </div>
 
-
-
+<div class="overlay">
+<img src="" class="active-photo" />
+<img src="left.png" id="left" onclick="App.previous()"/>
+<img src="right.png" id="right" onclick="App.next()"/>
+<img src="x.jpg" id="exit" onclick="App.exit()"/>
 </div>
+
 <script src="task.js"></script>
+
+
+
 </body>
 </html>
