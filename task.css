@@ -1,24 +1,15 @@
 img{
 	width: 400px;
 	height: 330px;
-	margin: 30px;
+
+	transition: 1s;
 }
 ul {
 	list-style-type: none;
 
 
 }
-.thumbnails li {
-	float: left;
-}
 
-.thumbnails img {
-  opacity: .75;
-}
-
-.thumbnails img:hover {
-  opacity: 1;
-}
 
 
 .active-photo {
@@ -40,10 +31,11 @@ ul {
 	height: 100vh;
 	background-color: rgba(0, 0, 0, 0.8);
 	margin: 0;
+	z-index: 100;
 
 }
 
-#left {
+.left {
 
 	width: 3vw;
 	height: 5vh;
@@ -53,7 +45,7 @@ ul {
 	margin: 0;
 }
 
-#right {
+.right {
 
 	width: 3vw;
 	height: 5vh;
@@ -63,7 +55,7 @@ ul {
 	margin: 0;
 }
 
-#exit {
+.exit {
 	z-index: 1000;
 	width: 5vw;
 	height: 5vh;
@@ -72,4 +64,60 @@ ul {
 	top: 0vh;
 	margin:0;
 
+}
+button {
+	display: block;
+	margin: 0 auto;
+}
+
+
+.photo-wrapper {
+	display: inline-block;
+	perspective: 1000;
+	margin: 50px;
+}
+
+/* entire container, keeps perspective */
+
+	/* flip the pane when hovered */
+	/*.photo-wrapper:hover .flipper,*/
+	.photo-wrapper.clicked .flipper {
+		transform: rotateY(180deg);
+	}
+
+.photo-wrapper, .front, .back {
+	width: 320px;
+	height: 330px;
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.6s;
+		transform-style: preserve-3d;
+		width: 400px;
+		height: 400px;
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+	border: 2px solid black;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 400px;
+	height: 330;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
 }
